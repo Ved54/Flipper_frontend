@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "488778452653",
+    "project_id": "mazaapp-59f44",
+    "storage_bucket": "mazaapp-59f44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488778452653:android:cdd5605a145dd666b78024",
+        "android_client_info": {
+          "package_name": "com.example.mazha_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488778452653-n0smii9k748uvfpou3b81pnm7i8ee598.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mazha_app",
+            "certificate_hash": "a9dc0058e3c1ecef9e9773fce3718565b31657a9"
+          }
+        },
+        {
+          "client_id": "488778452653-tq96usr4ir0rfgli4bi3v2p7itci6jdu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMb0L1_F1JsL4Dy5Fiq2PCBb5LNS4QOsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488778452653-tq96usr4ir0rfgli4bi3v2p7itci6jdu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
