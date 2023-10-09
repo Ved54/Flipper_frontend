@@ -8,8 +8,6 @@ import 'package:flutter/material.dart';
 
 import 'Chats/provider/firebase_provider.dart';
 
-//NOTE : for background color use(Theme.of(context).colorScheme.background)
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

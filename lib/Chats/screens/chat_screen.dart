@@ -223,23 +223,6 @@ class ChatMessages extends StatelessWidget {
 
   final String receiverId;
 
-  // final messages = [
-  //   Message(
-  //       senderId: 'LY95U59Da9T22b06hs9N2smGiFH2',
-  //       receiverId: 'uSEcT0eXnCTGP1ZEylv54e3YAFg2',
-  //       content: 'Hello',
-  //       sentTime: DateTime.now(),
-  //       messageType: MessageType.text),
-  //   Message(
-  //       senderId: 'uSEcT0eXnCTGP1ZEylv54e3YAFg2',
-  //       receiverId: 'LY95U59Da9T22b06hs9N2smGiFH2',
-  //       content: 'Bye',
-  //       sentTime: DateTime.now(),
-  //       messageType: MessageType.text),
-  // ];
-
-  // final messages = [];
-
   @override
   Widget build(BuildContext context) {
 
@@ -312,14 +295,6 @@ class MessageBubble extends StatelessWidget {
                     )
                   : Text(message.content,
                       style: const TextStyle(color: Colors.white)),
-              // const SizedBox(height: 5),
-              // Text(
-              //   timeago.format(message.sentTime),
-              //   style: const TextStyle(
-              //     color: Colors.white,
-              //     fontSize: 10,
-              //   ),
-              // ),
             ],
           ),
         ),
