@@ -19,6 +19,7 @@ import 'package:mazha_app/Product%20Uploads/Mobile%20Upload/view_mobile.dart';
 import 'package:mazha_app/Product%20Uploads/Pet%20Upload/view_pet.dart';
 import 'package:mazha_app/Product%20Uploads/Property%20Upload/view_property.dart';
 import 'package:mazha_app/screens/barter.dart';
+import 'package:mazha_app/screens/bidding.py.dart';
 import 'package:mazha_app/utils/next_screen.dart';
 import 'package:provider/provider.dart';
 import '../Product Uploads/Fashion Upload/view_fashion.dart';
@@ -113,7 +114,9 @@ class _HomeState extends State<Home> {
                 AssetImage('assets/icons/bid_icon.png'),
                 color: Color(0xFF333333),
               ),
-              onPressed: () {},
+              onPressed: () {
+                nextScreen(context, Bidding());
+              },
             )
           ),
           SizedBox(
