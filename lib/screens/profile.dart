@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:mazha_app/screens/edit_profile.dart';
+import 'package:mazha_app/screens/reports.dart';
 import 'package:mazha_app/screens/search_profile.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
@@ -691,24 +692,6 @@ class _ProfileState extends State<Profile> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
-                                  "FeedBack",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 15),
-                                ),
-                                Spacer(),
-                                IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.feed,
-                                      size: 20,
-                                    ))
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
                                   "Terms & Condition",
                                   style: TextStyle(
                                       fontWeight: FontWeight.w300,
@@ -741,23 +724,28 @@ class _ProfileState extends State<Profile> {
                                     ))
                               ],
                             ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Reports",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w300,
-                                      fontSize: 15),
-                                ),
-                                Spacer(),
-                                IconButton(
-                                    onPressed: () {},
-                                    icon: Icon(
-                                      Icons.receipt,
-                                      size: 20,
-                                    ))
-                              ],
+                            GestureDetector(
+                              onTap: (){
+                                nextScreen(context, Reports());
+                              },
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Reports",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: 15),
+                                  ),
+                                  Spacer(),
+                                  IconButton(
+                                      onPressed: () {},
+                                      icon: Icon(
+                                        Icons.bar_chart,
+                                        size: 20,
+                                      ))
+                                ],
+                              ),
                             ),
                           ],
                         ),
