@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:mazha_app/screens/build_profile.dart';
 import 'package:provider/provider.dart';
 import 'package:rounded_loading_button/rounded_loading_button.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../providers/internet_provider.dart';
 import '../providers/sign_in_provider.dart';
-import '../utils/GraphQL.dart';
 import '../utils/nav_bar.dart';
 import '../utils/next_screen.dart';
 import '../utils/snack_bar.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:graphql_flutter/graphql_flutter.dart' as graphql;
-import 'package:http/http.dart' as http;
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -25,13 +20,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final RoundedLoadingButtonController googleController =
   RoundedLoadingButtonController();
-
-  final String getUsersQuery = '''
-    query{
-    displayUsers{
-        flipperUser
-    }
-  }''';
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   .saveDataToSharedPreferences()
                   .then((value) => sp.setSignIn().then((value) {
                 googleController.success();
-                handleAfterSignIn();
+                handleAfterSignInExists();
               })));
             } else {
               // user does not exist
@@ -118,20 +106,12 @@ class _LoginScreenState extends State<LoginScreen> {
   //handle after signin
   handleAfterSignIn() {
     Future.delayed(const Duration(milliseconds: 400)).then((value) {
-      // GraphQLProvider(
-      //   client: client,
-      //   child: graphql.Query(
-      //     options: QueryOptions(
-      //       document: gql(getUsersQuery),
-      //     ),
-      //     builder: (QueryResult result, {fetchMore, refetch}){
-      //       final List<dynamic> data = result.data?['displayUsers'];
-      //       print("Data : ${data}");
-      //       return SizedBox();
-      //     },
-      //   ),
-      // );
       nextScreen(context, const BuildProfile());
+    });
+  }
+  handleAfterSignInExists() {
+    Future.delayed(const Duration(milliseconds: 400)).then((value) {
+      nextScreen(context, const NavBar());
     });
   }
 }

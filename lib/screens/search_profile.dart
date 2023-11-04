@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+
 import 'package:mazha_app/screens/view_profile.dart';
+import 'package:mazha_app/utils/nav_bar.dart';
 import 'package:mazha_app/utils/next_screen.dart';
 import 'package:provider/provider.dart';
 import '../providers/sign_in_provider.dart';
@@ -35,6 +37,12 @@ class _ProfileSearchState extends State<ProfileSearch> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
+        leading: IconButton(
+          onPressed: (){
+            nextScreen(context, NavBar());
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
         centerTitle: true,
         title: Text('Search Profiles'),
       ),

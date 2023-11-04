@@ -5,6 +5,7 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:graphql_flutter/graphql_flutter.dart' as graphql;
 import 'package:mazha_app/screens/view_profile.dart';
 import 'package:mazha_app/utils/next_screen.dart';
+import '../../Chats/screens/chat_screen.dart';
 import '../../utils/GraphQL.dart';
 
 class ViewElecApp extends StatefulWidget {
@@ -328,28 +329,30 @@ class _ViewElecAppState extends State<ViewElecApp> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // GestureDetector(
+              //   onTap: () {},
+              //   child: Container(
+              //     decoration: BoxDecoration(
+              //         color: Colors.amber,
+              //         borderRadius: BorderRadius.all(Radius.circular(10))),
+              //     width: MediaQuery.of(context).size.width * 0.45,
+              //     height: 40,
+              //     child: Center(
+              //       child: Text(
+              //         'Make Offer',
+              //         style: TextStyle(
+              //             color: Colors.white,
+              //             fontSize: 18,
+              //             fontWeight: FontWeight.w500),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              // Spacer(),
               GestureDetector(
-                onTap: () {},
-                child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  width: MediaQuery.of(context).size.width * 0.45,
-                  height: 40,
-                  child: Center(
-                    child: Text(
-                      'Make Offer',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ),
-              ),
-              Spacer(),
-              GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  nextScreen(context, ChatScreen(userId: widget.userId));
+                },
                 child: Container(
                   decoration: BoxDecoration(
                       color: Color(0xFF4EDB86),

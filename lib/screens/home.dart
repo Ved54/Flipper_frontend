@@ -19,7 +19,8 @@ import 'package:mazha_app/Product%20Uploads/Mobile%20Upload/view_mobile.dart';
 import 'package:mazha_app/Product%20Uploads/Pet%20Upload/view_pet.dart';
 import 'package:mazha_app/Product%20Uploads/Property%20Upload/view_property.dart';
 import 'package:mazha_app/screens/barter.dart';
-import 'package:mazha_app/screens/bidding.py.dart';
+import 'package:mazha_app/screens/bidding.dart';
+import 'package:mazha_app/screens/my_items.dart';
 import 'package:mazha_app/utils/next_screen.dart';
 import 'package:provider/provider.dart';
 import '../Product Uploads/Fashion Upload/view_fashion.dart';
@@ -171,10 +172,12 @@ class _HomeState extends State<Home> {
                     splashColor: Colors.transparent,
                     iconSize: 30,
                     icon: const Icon(
-                      Icons.notifications,
+                      Icons.propane_tank_rounded,
                       color: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      nextScreen(context, MyItems());
+                    },
                   ),
                 )
               ],
@@ -735,6 +738,7 @@ class _Product_List_MobileState extends State<Product_List_Mobile> {
     final String getMobilesQuery = '''
     query{
       displayMobiles(flipperUser: "${sp.uid}"){
+        id
         flipperUser
         flipperType
         accessoryType
@@ -933,6 +937,7 @@ class _Product_List_JobState extends State<Product_List_Job> {
     final String getJobsQuery = '''
     query{
       displayJobs(flipperUser: "${sp.uid}"){
+        id
         flipperUser
         flipperType
         jobType
@@ -1348,6 +1353,7 @@ class _Product_List_FurnitureState extends State<Product_List_Furniture> {
     final String getFurnituresQuery = '''
     query{
       displayFurnitures(flipperUser: "${sp.uid}"){
+        id
         flipperUser
         flipperType
         furnitureType
@@ -1540,6 +1546,7 @@ class _Product_List_FashionState extends State<Product_List_Fashion> {
     final String getFashionsQuery = '''
     query{
       displayFashions(flipperUser: "${sp.uid}"){
+        id
         flipperUser
         flipperType
         fashionType
@@ -1732,6 +1739,7 @@ class _Product_List_ElecAppState extends State<Product_List_ElecApp> {
     final String getElecAppsQuery = '''
     query{
       displayElectronicAppliances(flipperUser: "${sp.uid}"){
+        id
         flipperUser
         flipperType
         elecType
@@ -1923,6 +1931,7 @@ class _Product_List_CommSpareState extends State<Product_List_CommSpare> {
     final String getCommsQuery = '''
     query{
       displayComms(flipperUser: "${sp.uid}"){
+        id
         flipperUser
         flipperType
         commType
@@ -2135,6 +2144,7 @@ class _Product_List_BooksSportsHobbiesState extends State<Product_List_BooksSpor
     final String getBSHsQuery = '''
     query{
       displayBSHs(flipperUser: "${sp.uid}"){
+        id
         flipperUser
         flipperType
         bshType
@@ -2327,6 +2337,7 @@ class _Product_List_PetState extends State<Product_List_Pet> {
     final String getPetsQuery = '''
     query{
       displayPets(flipperUser: "${sp.uid}"){
+        id
         flipperUser
         flipperType
         petType
@@ -2518,6 +2529,7 @@ class _Product_List_ServiceState extends State<Product_List_Service> {
     final String getServicesQuery = '''
     query{
       displayServices(flipperUser: "${sp.uid}"){
+        id
         flipperUser
         flipperType
         serviceType

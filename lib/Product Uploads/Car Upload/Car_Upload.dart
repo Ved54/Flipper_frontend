@@ -15,8 +15,6 @@ import '../../utils/nav_bar.dart';
 
 class UploadCar extends StatefulWidget {
   const UploadCar({super.key});
-
-
   @override
   State<UploadCar> createState() => _UploadCarState();
 }

@@ -5,6 +5,7 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:mazha_app/screens/view_auction.dart';
 import 'package:mazha_app/utils/next_screen.dart';
 import '../utils/GraphQL.dart';
+import '../utils/nav_bar.dart';
 
 class Bidding extends StatefulWidget {
   const Bidding({super.key});
@@ -37,6 +38,12 @@ class _BiddingState extends State<Bidding> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            nextScreen(context, NavBar());
+          },
+        ),
         elevation: 0,
         backgroundColor: Colors.white,
         centerTitle: true,
@@ -66,14 +73,15 @@ class _BiddingState extends State<Bidding> {
             final List<dynamic> data = result.data?['displayAuctions'];
 
             if (data.isEmpty) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.asset('assets/icons/no_data.png',scale: 3,),
-                  SizedBox(height: 20,),
-                  Text('Looks like there are no ongoing Auctions !!', style: TextStyle(fontWeight: FontWeight.w300, fontSize: 17),),
-                ],
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/icons/no_data.png',scale: 3,),
+                    SizedBox(height: 20,),
+                    Text('Looks like there are no ongoing Auctions !!', style: TextStyle(fontWeight: FontWeight.w300, fontSize: 17),),
+                  ],
+                ),
               );
             }
             return ListView.builder(

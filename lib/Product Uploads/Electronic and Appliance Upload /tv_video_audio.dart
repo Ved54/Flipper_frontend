@@ -130,7 +130,7 @@ class _TVAudioVideoState extends State<TVAudioVideo> {
         elevation: 1,
         backgroundColor: Colors.white,
         title: const Text(
-          "Furniture Details",
+          "Include Details",
           style: TextStyle(
             color: Color(0xFF333333),
           ),
@@ -152,27 +152,6 @@ class _TVAudioVideoState extends State<TVAudioVideo> {
         padding: const EdgeInsets.all(15.0),
         child: ListView(
           children: [
-            TextField(
-              controller: typeController,
-              readOnly: true,
-              cursorColor: Color(0xFF4EDB86),
-              decoration: InputDecoration(
-                labelStyle: TextStyle(
-                  color: Colors.black,
-                ),
-                labelText: 'Type',
-                border: UnderlineInputBorder(),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 1,
-                    color: Color(0xFF4EDB86),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
             TextField(
               controller: titleController,
               onChanged: (value){

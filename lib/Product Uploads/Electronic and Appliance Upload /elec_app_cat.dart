@@ -40,133 +40,63 @@ class _SelectElecAppState extends State<SelectElecApp> {
                 color: Color(0xFF333333),),
             ),
           ),
-          Divider(),
-          SizedBox(
-            height: 40,
-            child: ListTile(
-              // onTap: (){
-              //   nextScreen(context, MobilePhoneUpload());
-              // },
-              contentPadding: EdgeInsets.only(left: 20, right: 20),
-              title: Text('Kitchen & Other Appliances',
-                style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
-              trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
-                color: Color(0xFF333333),),
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 40,
-            child: ListTile(
-              // onTap: (){
-              //   nextScreen(context, MobilePhoneUpload());
-              // },
-              contentPadding: EdgeInsets.only(left: 20, right: 20),
-              title: Text('Computers & Laptops',
-                style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
-              trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
-                color: Color(0xFF333333),),
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 40,
-            child: ListTile(
-              // onTap: (){
-              //   nextScreen(context, MobilePhoneUpload());
-              // },
-              contentPadding: EdgeInsets.only(left: 20, right: 20),
-              title: Text('Cameras & Lenses',
-                style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
-              trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
-                color: Color(0xFF333333),),
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 40,
-            child: ListTile(
-              // onTap: (){
-              //   nextScreen(context, MobilePhoneUpload());
-              // },
-              contentPadding: EdgeInsets.only(left: 20, right: 20),
-              title: Text('Games & Entertainment',
-                style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
-              trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
-                color: Color(0xFF333333),),
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 40,
-            child: ListTile(
-              // onTap: (){
-              //   nextScreen(context, MobilePhoneUpload());
-              // },
-              contentPadding: EdgeInsets.only(left: 20, right: 20),
-              title: Text('Fridges',
-                style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
-              trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
-                color: Color(0xFF333333),),
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 40,
-            child: ListTile(
-              // onTap: (){
-              //   nextScreen(context, MobilePhoneUpload());
-              // },
-              contentPadding: EdgeInsets.only(left: 20, right: 20),
-              title: Text('Computer Accessories',
-                style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
-              trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
-                color: Color(0xFF333333),),
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 40,
-            child: ListTile(
-              // onTap: (){
-              //   nextScreen(context, MobilePhoneUpload());
-              // },
-              contentPadding: EdgeInsets.only(left: 20, right: 20),
-              title: Text('Hard Disks, Printer & Monitors',
-                style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
-              trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
-                color: Color(0xFF333333),),
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 40,
-            child: ListTile(
-              // onTap: (){
-              //   nextScreen(context, MobilePhoneUpload());
-              // },
-              contentPadding: EdgeInsets.only(left: 20, right: 20),
-              title: Text('ACs',
-                style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
-              trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
-                color: Color(0xFF333333),),
-            ),
-          ),
-          Divider(),
-          SizedBox(
-            height: 40,
-            child: ListTile(
-              // onTap: (){
-              //   nextScreen(context, MobilePhoneUpload());
-              // },
-              contentPadding: EdgeInsets.only(left: 20, right: 20),
-              title: Text('Washing Machines',
-                style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
-              trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
-                color: Color(0xFF333333),),
-            ),
-          ),
-          Divider(),
+          // Divider(),
+          // SizedBox(
+          //   height: 40,
+          //   child: ListTile(
+          //     // onTap: (){
+          //     //   nextScreen(context, MobilePhoneUpload());
+          //     // },
+          //     contentPadding: EdgeInsets.only(left: 20, right: 20),
+          //     title: Text('Kitchen & Other Appliances',
+          //       style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
+          //     trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
+          //       color: Color(0xFF333333),),
+          //   ),
+          // ),
+          // Divider(),
+          // SizedBox(
+          //   height: 40,
+          //   child: ListTile(
+          //     // onTap: (){
+          //     //   nextScreen(context, MobilePhoneUpload());
+          //     // },
+          //     contentPadding: EdgeInsets.only(left: 20, right: 20),
+          //     title: Text('Computers & Laptops',
+          //       style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
+          //     trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
+          //       color: Color(0xFF333333),),
+          //   ),
+          // ),
+          // Divider(),
+          // SizedBox(
+          //   height: 40,
+          //   child: ListTile(
+          //     // onTap: (){
+          //     //   nextScreen(context, MobilePhoneUpload());
+          //     // },
+          //     contentPadding: EdgeInsets.only(left: 20, right: 20),
+          //     title: Text('Cameras & Lenses',
+          //       style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
+          //     trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
+          //       color: Color(0xFF333333),),
+          //   ),
+          // ),
+          // Divider(),
+          // SizedBox(
+          //   height: 40,
+          //   child: ListTile(
+          //     // onTap: (){
+          //     //   nextScreen(context, MobilePhoneUpload());
+          //     // },
+          //     contentPadding: EdgeInsets.only(left: 20, right: 20),
+          //     title: Text('Games & Entertainment',
+          //       style: TextStyle(fontSize: 15, color: Color(0xFF333333)),),
+          //     trailing: Icon(Icons.arrow_forward_ios_sharp, size: 15,
+          //       color: Color(0xFF333333),),
+          //   ),
+          // ),
+          //
         ],
       ),
     );

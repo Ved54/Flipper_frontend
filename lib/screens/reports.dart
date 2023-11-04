@@ -806,7 +806,7 @@ class _ReportsState extends State<Reports> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Total Auctions ",
+                          "Total Barters ",
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.w500,

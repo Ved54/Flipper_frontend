@@ -7,6 +7,7 @@ import 'package:graphql_flutter/graphql_flutter.dart' as graphql;
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:mazha_app/screens/search_profile.dart';
 import 'package:mazha_app/utils/next_screen.dart';
+import '../Chats/screens/chat_screen.dart';
 import '../utils/GraphQL.dart';
 
 class ViewProfile extends StatefulWidget {
@@ -301,7 +302,9 @@ class _ViewProfileState extends State<ViewProfile> {
                                       width: 20,
                                     ),
                                     GestureDetector(
-                                      onTap: () {},
+                                      onTap: () {
+                                        nextScreen(context, ChatScreen(userId: widget.userId));
+                                      },
                                       child: Container(
                                         height: 30,
                                         width: 100,

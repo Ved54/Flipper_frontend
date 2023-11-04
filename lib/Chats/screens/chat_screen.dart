@@ -1,10 +1,13 @@
 import 'dart:typed_data';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:graphql_flutter/graphql_flutter.dart' as graphql;
+import 'package:mazha_app/utils/nav_bar.dart';
+import 'package:mazha_app/utils/next_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:timeago/timeago.dart' as timeago;
 import 'package:url_launcher/url_launcher.dart';
+import '../../utils/GraphQL.dart';
 import '../provider/firebase_provider.dart';
 import '../services/mediaService.dart';
 import '../models/message.dart';
@@ -26,13 +29,44 @@ class _ChatScreenState extends State<ChatScreen> {
       ..getMessages(widget.userId);
     super.initState();
   }
+  var mdno;
   @override
   Widget build(BuildContext context) {
-    print(widget.userId);
+    final String userQuery = '''
+  query{
+  usersbyid(flipperUser: "${widget.userId}"){
+    mobileNumber
+  }
+}
+  ''';
+
     return Scaffold(
       appBar: _buildAppBar(),
       body: Column(
         children: [
+          GraphQLProvider(
+            client: client,
+            child: graphql.Query(
+                options: QueryOptions(
+                  document: gql(userQuery),
+                ),
+                builder: (QueryResult result, {fetchMore, refetch}) {
+                  if (result.hasException) {
+                    print("Exception");
+                    print(result.exception.toString());
+                    return Center(child: CircularProgressIndicator());
+                  }
+
+                  if (result.isLoading) {
+                    print("Loading");
+                    return Center(child: CircularProgressIndicator());
+                  }
+                  final Map<String, dynamic> data = result.data?['usersbyid'];
+                  mdno = data['mobileNumber']??0;
+
+                  return SizedBox();
+                }),
+          ),
           Expanded(child: ChatMessages(receiverId: widget.userId)),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -43,16 +77,20 @@ class _ChatScreenState extends State<ChatScreen> {
     );
   }
 
-  // Future<void> _launchCall() async {
-  //   final Uri launchUri = Uri(
-  //     scheme: 'tel',
-  //     path: '9270735616',
-  //   );
-  //   await launchUrl(launchUri);
-  // }
+  Future<void> _launchCall() async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: '$mdno',
+    );
+    await launchUrl(launchUri);
+  }
 
   AppBar _buildAppBar() => AppBar(
         elevation: 0,
+        leading: IconButton(
+          onPressed: (){nextScreen(context, NavBar());},
+          icon: Icon(Icons.arrow_back),
+        ),
         backgroundColor: Colors.white,
         title: Consumer<FirebaseProvider>(
           builder: (context, value, child) =>
@@ -81,9 +119,10 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
                 Spacer(),
                 IconButton(
-                  onPressed: () {
-                    // _launchCall();
-                  },
+                  onPressed: (){
+                    _launchCall();
+                    print(mdno);
+                    },
                   icon: Icon(Icons.call),
                 )
               ],
